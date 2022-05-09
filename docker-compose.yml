@@ -1,0 +1,13 @@
+version: "3.3"
+services:
+  tor2web:
+    image: abikome/tor2web
+    container_name: tor2web
+    ports:
+      - "80:80"
+    environment:
+      TOR2WEB_HOST: "$TOR2WEB_HOST"
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - "$PWD:/etc/tor2web:ro"
